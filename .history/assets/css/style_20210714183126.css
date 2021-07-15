@@ -1,0 +1,391 @@
+
+
+h1 {
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+p {
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+    width: 1140px;
+    /* background-color: rgb(236, 236, 236); */
+    margin: 0 auto;
+}
+
+#search {
+    border-radius: 10px;
+    width: 300px;
+    border-color: rgb(202, 202, 202);
+    height: 40px;
+    padding: 10px;
+    margin-right: 100px;
+}
+
+header {
+    padding: 10px;
+    display: flex;
+    gap: 20px;
+    height: 50px;
+    align-items: center;
+    /* background: rgb(255, 189, 189); */
+    margin-bottom: 40px;
+ 
+    background: rgb(255, 255, 255);
+    width:100%;
+}
+
+/* nav {
+    align-items: flex-end;
+} */
+
+.topnav {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+}
+
+.topnav .listitem {
+
+    font-size: 14px;
+    padding: 12px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.topnav .listitem:hover {
+    background-color: rgb(228, 228, 228);
+    display: block;
+}
+
+.listitem-last {
+    font-size: 14px;
+    padding: 12px;
+    border-radius: 50px;
+    font-weight: 600;
+    background: black;
+    color: white;
+}
+
+.listitem-last:hover {
+    background: rgb(54, 54, 54);
+}
+
+
+
+
+h1 .text-pink {
+    color: #FF5D5D;
+}
+
+/* top-categories > mini-card > left et right */
+
+.top-categories {
+    display: flex;
+    margin: 20px 0;
+    padding: 1rem;
+    gap: 10px;
+    font-size: 14px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    background: white;
+    font-weight: 600;
+
+}
+
+.mini-card {
+    display: flex;
+    flex: 1;
+    border: 1px solid black;
+    height: 2.2rem;
+    border-radius: 12px;
+    padding: 12px;
+    transition: 0.2s;
+
+}
+
+.mini-card:hover {
+    background-color: black;
+    color: white;
+
+
+}
+
+.mini-card .text {
+    width: 80%;
+    padding-right: 5px;
+}
+
+.mini-card .icon {
+    font-weight: bold;
+}
+
+
+.submenu {
+    width: 8rem;
+    margin-top: 50px;
+    position: absolute;
+    /* background: gray; */
+    z-index: 1000;
+    padding: 10px;
+    border: gray 1px solid;
+    border-radius: 10px;
+    display: none;
+
+}
+
+.submenu li {
+    padding: 5px;
+
+}
+
+.mini-card .sub:active {
+    display: block;
+}
+
+
+.top-gallery {
+
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "gauche droit-haut"
+        "gauche droit-bas";
+
+
+}
+
+.top-gallery img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+
+}
+
+.gauche {
+    grid-area: gauche;
+}
+
+.droit-haut {
+    grid-area: droit-haut;
+}
+
+.droit-bas {
+    grid-area: droit-bas;
+}
+
+
+.breadcrumb {
+    margin: 20px auto 20px 0;
+    font-size: 11px;
+    color: grey;
+
+}
+
+.breadcrumb li {
+    display: inline;
+
+}
+
+.breadcrumb li::after {
+    content: " >";
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: grey;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.super-bloc {
+    display: block;
+}
+
+.bloc-presentation {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    height: auto;
+}
+
+.presentation {
+    /* width: 60%; */
+    flex: 3;
+    padding-right: 30px;
+}
+
+.presentation p {
+    font-size: 18px;
+    line-height: 26px
+}
+
+.carte {
+    /* display: flex; */
+    /* flex-direction: column; */
+    flex: 2;
+    /* width: 40%; */
+    /* height: 300px; */
+    background-color: #FF5D5D;
+    border-radius: 20px;
+    box-sizing: border-box;
+    
+
+}
+
+.carte .header {
+    padding-top: 2rem;
+    padding-left: 2rem;
+    font-size: 28px;
+    font-weight: 600;
+
+}
+
+.carte .text {
+ 
+    padding-top: 1rem;
+    padding-left: 2rem;
+}
+
+.carte button {
+    padding: 16px;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    border-radius: 20px;
+    font-size: 18px;
+    border-style: none;
+    margin: 0 2rem 2rem;
+    transition: 0.2s;
+
+}
+
+.carte button:hover {
+    background: rgb(54, 54, 54);
+}
+
+.carte img {
+    width: 100%;
+    -webkit-border-bottom-right-radius: 20px;
+    -webkit-border-bottom-left-radius: 20px;
+    -moz-border-radius-bottomright: 20px;
+    -moz-border-radius-bottomleft: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: block;
+}
+
+
+/* immanquables carousel */
+
+.immanquables {
+    display: flex;
+    margin-bottom: 50px;
+ 
+}
+
+.immanquables .presentation {
+    flex:2;
+
+}
+
+
+
+.immanquables .carousel {
+    display: flex;
+    flex: 5;
+    flex-direction: row;
+    overflow: hidden;
+    overflow-x: scroll;
+    gap: 15px
+}
+.carousel .items {
+    flex-direction: column;
+
+}
+.image {
+    position: relative;
+
+}
+
+
+.image .coeur {
+    position: absolute;
+    padding: 10px;
+    background: white;
+    border-radius: 50%;
+    right: 10px;
+    top:10px;
+
+}
+
+.items a {
+    text-decoration: none;
+}
+.carousel .items .image img { 
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+
+}
+
+
+.description .titre {
+    font-size: 16px;
+    margin: 8px 0;
+    font-weight: 600;
+
+}
+
+.description .titre:hover {
+    text-decoration:underline
+}
+
+.description .notation {
+    font-size: 12px;
+    margin: 10px 0;
+
+    
+}
+
+.description .notation i {
+    padding-right:2px;
+
+}
+
+.description .small-cat {
+    color: gray;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.green {
+    color: green;
+}
