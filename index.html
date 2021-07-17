@@ -14,39 +14,119 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Uchen&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/marging-pad.css">
     <link rel="stylesheet" href="/assets/css/style.css">
     <title>TripAdvisor</title>
 </head>
 
 <body>
+    <div class="top-header mobile-only" x-data="{ isOpen: true }" x-show="isOpen" x-transition>
+        <div class="left" @click=" isOpen = !isOpen"> <i class="fa fa-times"></i>
+            <a href="#" class="logo-mobile">
+                <img src="/assets/img/app-icon-60x60.svg" alt="Logo TripAdvisor" height="60px" />
+            </a>
+        </div>
+        <div class="right">
+            <div class="mini-text"> TripAdvisor pour iOS <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                (100042)
+            </div>
+
+            <button class="button-black">Installer</button>
+            <button class="button-white">Ouvrir dans l'appli</button>
+        </div>
+
+    </div>
     <div class="wrapper">
-        <header>
+
+        <header x-data="{ Open: false }">
+
+            <div class="left-overlay-menu" x-show="Open" x-transition>
+                <!-- <button >Toggle</button> -->
+                <i class="fa fa-times" @click="Open = !Open"></i>
+
+                <!-- menu avec submenu "avis" -->
+
+                <!-- j'affiche le submenu au clic sur le mot avis -->
+                <button class="big-button-black">Connectez-vous</button>
+                <div x-data="{ open: false }">
+                    <a href="#" class="mb-1" x-on:click="open = !open">
+                        <h3>Avis <i class="fas fa-chevron-down"></i> </h3>
+                    </a>
+
+
+                    <div class="submenu-avis mb-3">
+
+                        <div class="ml-2 mb-4" x-show="open" x-transition>Ecrire un avis</div>
+                        <div class="ml-2 mb-4" x-show="open" x-transition>Publier des photos</div>
+
+                    </div>
+                </div>
+                <a href="#" class="mb-1">
+                    <h3>Alertes</h3>
+                </a>
+                <a href="#" class="mb-1">
+                    <h3>Voyage</h3>
+                </a>
+                <a href="#" class="mb-1">
+                    <h3>Réservations</h3>
+                </a>
+
+
+            </div>
+
+
+            <!-- hamburger -->
+            <!-- <button >Toggle</button> -->
+            <i class="fas fa-bars mobile-only " @click=" Open = !Open"></i>
+
+
             <!-- logo -->
-            <a href="#">
+            <a href="#" class="logo">
                 <img src="/assets/img/Tripadvisor_lockup_horizontal_secondary_registered.svg" alt="Logo TripAdvisor"
                     height="40px" />
             </a>
             <!-- champs de saisie -->
+            <i class="fa fa-search mobile-only"></i>
             <input type="search" name="recherche" id="search" placeholder="">
             <!-- menu -->
             <nav>
+
                 <ul class="topnav">
+
                     <li class="listitem"><i class="far fa-pen"></i> Avis</li>
                     <li class="listitem"><i class="far fa-heart"></i> Voyages</li>
                     <li class="listitem"><i class="far fa-bell"></i> Alertes</li>
-                    <li class="listitem-last">Connectez-vous</li>
+                    <li class="listitem-last">Contact</li>
                 </ul>
+
+                <ul class="topnav-mobile">
+                    <li class="listitem"><i class="far fa-pen"></i>1</li>
+                    <li class="listitem"><i class="far fa-heart">2</i></li>
+                    <li class="listitem"><i class="far fa-bell">3</i></li>
+                    <li class="listitem-last">Contact</li>
+                </ul>
+
             </nav>
         </header>
 
         <main>
             <h1><span class="text-pink">Explorez</span> Paris</h1>
 
-            <div class="top-categories">
+
+            <button id="slide-left">Slide left</button>
+            <button id="slide-right">Slide right</button>
+            
+         
+
+            <div id="top-categories">
 
                 <div class="mini-card">
                     <div class="text">Hôtels</div>
-                    <div class="icon"> <i class="far fa-home"></i> </div>
+                    <div class="icon"> <i class="far fa-home "></i> </div>
                 </div>
                 <div class="mini-card">
                     <div class="text">Locations de vacances</div>
@@ -257,7 +337,20 @@
             Made at <b>Le réacteur</b> by <b>Mélina MESSAL</b> - 2021
         </div>
     </footer>
+    <script src="//unpkg.com/alpinejs" defer></script>
 
+    <script>
+        const slideRight = document.getElementById('slide-right');
+        const slideLeft = document.getElementById('slide-left');
+
+        slideRight.onclick = () => {
+            document.getElementById('top-categories').scrollLeft += 90;
+        };
+
+        slideLeft.onclick = () => {
+            document.getElementById('top-categories').scrollLeft -= 90;
+        };
+    </script>
 </body>
 
 </html>
